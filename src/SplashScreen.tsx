@@ -205,7 +205,7 @@ return (
         exit="exit"
         className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-[#0A0F1F]">
 
-        {/* Ambient base glow */}
+        
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_40%,rgba(56,189,248,0.14),transparent)]" />
 
         <motion.div
@@ -217,7 +217,7 @@ return (
             ease: "easeInOut",
           }}/>
 
-        {/* Grid */}
+        
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.05]"
           style={{
@@ -228,17 +228,17 @@ return (
 
         <CircuitLines />
 
-        {/* Particles */}
+        
         <div className="pointer-events-none absolute inset-0">
           {PARTICLES.map((p) => (
             <Particle key={p.id} p={p} />
           ))}
         </div>
 
-        {/* Center content */}
+        
         <div className="relative z-10 flex flex-col items-center px-6 text-center">
 
-          {/* Boot text */}
+          
           <div className="mb-6 h-5 font-mono text-[11px] tracking-wide text-sky-400/70">
             {BOOT_LINES.map((line, i) => (
               <motion.p
@@ -254,7 +254,7 @@ return (
           </div>
 
 
-          {/* Logo */}
+          
           <motion.div
             variants={logoVariants}
             initial="hidden"
@@ -290,7 +290,7 @@ return (
           </motion.div>
 
 
-          {/* Subtitle */}
+          
           <motion.p
             variants={subtitleVariants}
             initial="hidden"
@@ -300,7 +300,7 @@ return (
           </motion.p>
 
 
-          {/* Loading */}
+          
           <div className="mt-10 flex flex-col items-center gap-4">
 
             <div className="relative h-10 w-10">
@@ -327,7 +327,7 @@ return (
         </div>
 
 
-        {/* Vignette */}
+        
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_50%,transparent_45%,rgba(10,15,31,0.85)_100%)]" />
 
       </motion.div>

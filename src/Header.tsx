@@ -24,21 +24,15 @@ import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 
 
-import Coffee from "./assets/images/coffee.png";
-import Laugh from "./assets/images/laugh.png";
-import Music from "./assets/images/music.png";
-import Peace from "./assets/images/peace.png";
+
 import Pose from "./assets/images/pose.png";
 import Stare from "./assets/images/stare.png";
-import Think from "./assets/images/think.png";
-import Thumb from "./assets/images/thumb.png";
 import Work from "./assets/images/work.png";
 import Write from "./assets/images/write.png";
 import Call from "./assets/images/call.png";
 import Formal from "./assets/images/formal.png";
 
 
-/* ================= TYPES ================= */
 
 
 export type ItemType =
@@ -96,7 +90,7 @@ export type MessageType = {
 
 
 
-/* ================= NAV DATA ================= */
+
 
 
 export const NAV_SECTIONS: NavSectionType[] = [
@@ -472,7 +466,7 @@ You can also use the buttons below to access my profiles directly:`,
 
 
 
-/* ================= NAV ITEM ================= */
+
 
 
 type NavItemProps = {
@@ -571,7 +565,6 @@ ${
   );
 
 }
-/* ================= HEADER COMPONENT ================= */
 
 
 type HeaderProps = {

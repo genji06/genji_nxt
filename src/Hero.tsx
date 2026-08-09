@@ -327,7 +327,7 @@ export default function Hero({
 
         <div className="col-span-full  relative z-20">
 
-          {/* 👇 Wrap BOTH inside this */}
+
           <div className="max-w-7xl mx-auto">
 
             <motion.p

@@ -24,13 +24,13 @@ export default function ContactPopup({
             <XMarkIcon className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
 
-          {/* Text */}
+
           <p className="pr-5 mb-4 text-[11px] leading sm:text-xs sm:leading-6 lg:text-sm lg:leading-7 text-white/80">
             Enjoying the conversation?
             Reach out to Jero directly.
           </p>
 
-          {/* Button */}
+
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=jeromevargas194@gmail.com"
             target="_blank"

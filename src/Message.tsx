@@ -121,7 +121,7 @@ function formatBoldTextWithTyping(
     currentLength = end;
 
 
-    // not reached yet
+
     if (visibleText.length <= start) {
       return null;
     }
@@ -133,7 +133,7 @@ function formatBoldTextWithTyping(
     );
 
 
-    // Bold section
+
     if (
       part.startsWith("**") &&
       part.endsWith("**")
@@ -151,7 +151,7 @@ function formatBoldTextWithTyping(
     }
 
 
-    // Italic section
+
     if (
       part.startsWith("*") &&
       part.endsWith("*")
@@ -232,8 +232,7 @@ useEffect(() => {
 
   if (messages.length === 0) return;
 
-  // User manually scrolled away from the bottom.
-  // Don't fight their scrolling while typing.
+
   if (userScrolled.current && !forceScroll) return;
 
   requestAnimationFrame(() => {
@@ -395,7 +394,7 @@ useEffect(() => {
                   }`}
                 >
 
-                  {/* Message bubble */}
+
                   <motion.div
                     initial={{
                       opacity: 0,
@@ -469,7 +468,7 @@ useEffect(() => {
                   </motion.div>
 
 
-                  {/* USER TIME — left of bubble */}
+
                   {msg.role === "user" && msg.time && (
                     <span
                       className={`text-xs text-gray-400 whitespace-nowrap transition-opacity duration-200 ${

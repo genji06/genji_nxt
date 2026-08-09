@@ -26,7 +26,7 @@ import Thumb from "./assets/images/thumb.png";
 import Work from "./assets/images/work.png";
 import Write from "./assets/images/write.png";
 
-/* ================= TYPES ================= */
+
 
 type CardType = "projects" | "skills" | "music" | "contact";
 
@@ -139,7 +139,7 @@ type BodyProps = {
 
 
 
-/* ================= DATA ================= */
+
 const STICKERS = {
   coffee: Coffee,
   laugh: Laugh,
@@ -436,7 +436,8 @@ const KEYWORD_ANSWERS: KeywordAnswerType[] = [
       "lol"
     ],
 
-    sticker: STICKERS.peace,
+
+    sticker: STICKERS.laugh,
 
     buttons: [
       "Built projects",
@@ -637,7 +638,7 @@ What are you curious about?`,
       "riding",
     ],
 
-    sticker: STICKERS.laugh,
+    sticker: STICKERS.pose,
 
     buttons: [
       "Photography",
@@ -760,8 +761,7 @@ function findAnswers(
     return null;
   }
 
-  // Prioritize the item with the longest matching keyword.
-  // Longer keywords are usually more specific.
+
   const bestMatch = matches.sort((a, b) => {
 
     const getScore = (
@@ -794,7 +794,6 @@ function findAnswers(
 
 
 
-/* ================= INFO CARD ================= */
 
 
 type InfoCardProps = {
@@ -903,11 +902,10 @@ function sendMessage(
     ]);
   }
 
-  // Find what the button/keyword refers to
+
   const match = findAnswers(trimmed);
 
-  // If clicked from a button, show the actual question
-  // instead of the button text.
+
   const userQuestion =
     messageId && match && "question" in match
       ? match.question

@@ -16,11 +16,11 @@ export default function ProjectCard({
   return (
     <div
       className="relative w-full max-w-[260px] min-h-[190px]  p-4 rounded-xl bg-white/[0.02] border border-white/10 hover:border-sky-400/40 transition flex flex-col justify-between overflow-hidden">
-      {/* left accent */}
+      
       <div
         className="absolute left-0 top-0 h-full w-[3px]bg-gradient-to-b from-sky-400 to-blue-500"/>
 
-      {/* content */}
+      
       <div className="space-y-2">
         <h3 className="text-sm font-semibold text-white leading-tight">
           {title}
@@ -31,7 +31,7 @@ export default function ProjectCard({
         </p>
       </div>
 
-      {/* tech */}
+      
       <div className="flex flex-wrap gap-2 mt-3">
         {tech.map((item, index) => (
           <span
@@ -42,7 +42,7 @@ export default function ProjectCard({
         ))}
       </div>
 
-      {/* bottom actions */}
+      
       <div className="flex justify-between items-center mt-4">
         {live ? (
         <a href={live} target="_blank" rel="noopener noreferrer" 

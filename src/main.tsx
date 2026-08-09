@@ -4,7 +4,7 @@ import './index.css'
 import profile from "./assets/images/profile.png"
 import App from './App.tsx'
 
-// Set favicon
+
 const favicon = document.querySelector('link[rel="icon"]') as HTMLLinkElement
 
 if (favicon) {

@@ -80,7 +80,6 @@ function Gallery({
 
       return (
         <>
-          {/* PREVIEW CARD */}
 
     <motion.div
 
@@ -148,7 +147,6 @@ function Gallery({
               </motion.button>
       </motion.div>
 
-      {/* CAROUSEL MODAL */}
       {
         open && (
 

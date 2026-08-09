@@ -189,29 +189,28 @@ export default function MusicPlayer(): React.ReactElement {
         }}
       />
 
-      {/* REST OF YOUR JSX REMAINS THE SAME */}
-            {/* TOP SECTION */}
+
       <div
         className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5 mb-5 sm:mb-6">
 
 
-        {/* ARTWORK */}
+
         <div
           className={`relative w-full sm:w-28 aspect-square sm:aspect-auto sm:h-28 max-w-[9rem] sm:max-w-none shrink-0 rounded-2xl overflow-visible `}>
             
-            {/* Album Image */}
+
             <img
               src={displayTrack.image}
               alt={displayTrack.title}
               className="absolute inset-0 w-full h-full object-cover rounded-2xl"/>
 
-          {/* "Music" tag overlay */}
+
           <span
             className="absolute top-2 left-2 ext-[10px] font-medium tracking-wide uppercase text-white bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-full">
             Music
           </span>
 
-          {/* Vinyl */}
+
           <div className="absolute -bottom-5 -right-4 z-20">
             <div
               className="w-12 h-12 m:w-12 sm:h-12 rounded-full bg-black/70 border border-white/20 flex items-center justify-center vinyl-spin"
@@ -225,7 +224,7 @@ export default function MusicPlayer(): React.ReactElement {
             </div>
           </div>
 
-          {/* Title overlay */}
+
           <div
             className="absolute bottom-0 inset-x-0  px-2.5 pb-2 pt-6 bg-gradient-to-t from-black/70 to-transparent rounded-2xl">
             <p className="text-white text-xs font-semibold truncate">
@@ -237,7 +236,7 @@ export default function MusicPlayer(): React.ReactElement {
           </div>
         </div>
 
-        {/* NOTES */}
+
         <div className="flex-1 min-w-0 text-center sm:text-left">
           <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-3">
             <span className="text-xs px-3 py-1 rounded-full bg-white/10">
@@ -259,7 +258,7 @@ export default function MusicPlayer(): React.ReactElement {
         </div>
       </div>
 
-      {/* PLAYER CONTROL */}
+
       <div
         className="p-3 sm:p-4 rounded-2xl bg-white/[0.04] border border-white/10 mb-5">
         <p className="text-xs tracking-widest text-white/60">
@@ -273,11 +272,11 @@ export default function MusicPlayer(): React.ReactElement {
           {displayTrack.artist} • {displayTrack.genre}
         </p>
 
-        {/* PLAYER ROW */}
+       
         <div className="flex items-center gap-3 mt-4">
 
 
-          {/* Play Button */}
+          
           <button
             onClick={togglePlay}
             aria-label={isPlaying ? "Pause" : "Play"}
@@ -292,7 +291,7 @@ export default function MusicPlayer(): React.ReactElement {
             {isPlaying ? <PauseIcon className="w-4 h-4"/> : <PlayIcon className="w-4 h-4"/>}
           </button>
 
-          {/* Progress + Time */}
+          
           <div className="flex-1 min-w-0">
             <input
               type="range"
@@ -318,7 +317,7 @@ export default function MusicPlayer(): React.ReactElement {
         </div>
       </div>
 
-      {/* TRACK LIST */}
+      
       <div className="space-y-2.5 sm:space-y-3">
         {tracks.map((track, index) => (
           <TrackItem

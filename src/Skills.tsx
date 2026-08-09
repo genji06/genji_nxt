@@ -54,7 +54,7 @@ export default function Skills(): React.ReactElement {
             key={group.category}
             className="flex flex-col sm:flex-row gap-3 sm:gap-7"
           >
-            {/* Category */}
+            
             <div className="flex items-center gap-1 w-14 shrink-0">
               <span
                 className={`w-1.5 h-1.5 rounded-full shrink-0 ${group.dot}`}
@@ -65,7 +65,7 @@ export default function Skills(): React.ReactElement {
               </span>
             </div>
 
-            {/* Badges */}
+            
             <div className="flex flex-wrap gap-1.5 ms-4">
               {group.items.map((item: string) => (
                 <span
