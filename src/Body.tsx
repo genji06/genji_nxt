@@ -12,7 +12,7 @@ import { motion, AnimatePresence } from "motion/react";
 import Hero from "./Hero.tsx";
 import Footer from "./Footer.tsx";
 import Message from "./Message.tsx";
-import Header, { NAV_SECTIONS, type NavItemType, type NavImage} from "./Header.tsx";
+import { NAV_SECTIONS, type NavItemType, type NavImage} from "./Header.tsx";
 import ContactPopup from "./ContactPopup.tsx";
 
 import Coffee from "./assets/images/coffee.png";
@@ -795,20 +795,8 @@ function findAnswers(
 
 
 
-
-type InfoCardProps = {
-  icon: React.ElementType;
-  title: string;
-  desc: string;
-  onClick: () => void;
-};
-
-
-
-
 function Body({
   messages,
-  setMessages,
   input,
   setInput,
   addMessage,
@@ -819,7 +807,6 @@ function Body({
 }: BodyProps): React.ReactElement {
 
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
-  const bottomRef = useRef<HTMLDivElement | null>(null);
 
 
 
@@ -837,7 +824,7 @@ function Body({
 
   const showPlaceholder = input.length === 0;
 
-  const [questionCount, setQuestionCount] = useState<number>(0);
+  const [, setQuestionCount] = useState<number>(0);
 
   const [showContactPopup, setShowContactPopup] =
     useState<boolean>(false);
@@ -847,11 +834,6 @@ function Body({
 
     const [forceScroll, setForceScroll] = useState(false);
 
-function scrollToBottom(): void {
-  bottomRef.current?.scrollIntoView({
-    behavior: "smooth",
-  });
-}
 
 
   useEffect(() => {

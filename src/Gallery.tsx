@@ -180,7 +180,7 @@ function Gallery({
 
               dragElastic={0.3}
 
-              onDragEnd={(event, info) => {
+              onDragEnd={(_, info) => {
 
                 if (info.offset.x < -100) {
                   nextImage();

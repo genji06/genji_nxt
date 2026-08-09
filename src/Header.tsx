@@ -452,7 +452,7 @@ You can also use the buttons below to access my profiles directly:`,
         type: "contact",
 
         buttons: [
-          "built projects",
+          "Built projects",
           "About me",
           "Certifications",
         ],
@@ -615,8 +615,6 @@ function Header({
   );
 
 
-  const [hideMobileHeader, setHideMobileHeader] =
-    useState<boolean>(false);
 
 
 

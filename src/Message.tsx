@@ -217,17 +217,6 @@ const [tappedMessageId, setTappedMessageId] = useState<string | null>(null);
     useState<number>(0);
 
 
-
-  const lastAssistantIndex =
-    [...messages]
-      .map((m, i) =>
-        m.role === "assistant" ? i : -1
-      )
-      .filter(i => i !== -1)
-      .pop();
-
-
-
 useEffect(() => {
 
   if (messages.length === 0) return;
@@ -354,10 +343,8 @@ useEffect(() => {
       <div className="leading-relaxed tracking-[0.2px] flex flex-col gap-10 px-2 sm:px-3 lg:px-8 py-8 max-w-5xl mx-auto w-full">
 
 
-        {messages.map((msg, index) => {
+        {messages.map((msg) => {
 
-          const isLatestAssistant =
-            index === lastAssistantIndex;
 
 
           return (
