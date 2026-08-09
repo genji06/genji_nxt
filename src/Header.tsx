@@ -999,7 +999,7 @@ const [activeItem, setActiveItem] = useState<string | null>(null);
 
           </nav>
           <div
-            className={`-mt-6 sm:-mt-8 md:-mt-7 lg:-mt-6 pt-4 pb-4 md:pb-0 border-t border-white/10 ${
+            className={`-mt-12 sm:-mt-12 md:-mt-12 lg:mb-5 pt-4 pb-4 md:pb-0 border-t border-white/10 ${
               expanded ? "" : "flex justify-center"
             }`}
           >
@@ -1008,7 +1008,7 @@ const [activeItem, setActiveItem] = useState<string | null>(null);
           className={`
             flex items-center gap-2 rounded-xl border border-white/10
             bg-[#0A0F1F]/90
-            p-2 md:p-2.5   // 👈 reduced padding
+            p-2 md:p-2.5  
             shadow-md transition-all
 
             ${expanded 
@@ -1032,7 +1032,7 @@ const [activeItem, setActiveItem] = useState<string | null>(null);
           {expanded && (
             <div className="overflow-hidden">
               <h3 className="
-                text-white font-medium   // 👈 less bold
+                text-white font-medium  
                 text-xs sm:text-sm 
                 truncate
               ">
