@@ -1151,7 +1151,7 @@ function handleKeyDown(
                       animate={{y: 0,opacity: 1}}
                       exit={{y: -20,opacity: 0}}
                       transition={{duration: 0.4,ease: "easeOut"}}
-                      className="absolute left-2 top-3 sm:top-4 text-sm sm:text-base text-gray-500 pointer-events-none">
+                      className="absolute left-2 top-3 sm:top-4 text-base text-gray-500 pointer-events-none">
                       {placeholder}
                     </motion.div>
                   )}
@@ -1162,7 +1162,7 @@ function handleKeyDown(
                   onChange={handleChange}
                   onKeyDown={handleKeyDown}
                   rows={1}
-                  className="w-full text-sm sm:text-base px-2 py-3 sm:py-4 outline-none bg-transparent text-white resize-none overflow-hidden max-h-32"/>
+                  className="w-full text-base px-2 py-3 sm:py-4 outline-none bg-transparent text-white resize-none overflow-hidden max-h-32"/>
               </div>
 
 
