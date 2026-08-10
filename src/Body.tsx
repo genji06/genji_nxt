@@ -1044,7 +1044,7 @@ function handleKeyDown(
       <div className="flex flex-col w-full h-screen">
         <div className="relative h-full overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-sky-400/40 hover:scrollbar-thumb-sky-400/60">
 
-        <div className="flex-1 min-h-0 overflow-hidden">
+        <div className="flex-1 min-h-0">
           {messages.length === 0 ? (
             <Hero
               cards={CARDS}
