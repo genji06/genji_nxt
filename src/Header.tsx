@@ -999,7 +999,7 @@ const [activeItem, setActiveItem] = useState<string | null>(null);
 
           </nav>
           <div
-            className={`-mt-12 sm:-mt-12 md:-mt-12 lg:mb-5 pt-4 pb-4 md:pb-0 border-t border-white/10 ${
+            className={`-mt-12 sm:-mt-12 md:-mt-12 lg:-mt-12 lg:mb-5 pt-4 pb-35 md:pb-0 border-t border-white/10 shrink-0 ${
               expanded ? "" : "flex justify-center"
             }`}
           >
