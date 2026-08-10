@@ -1039,13 +1039,13 @@ function handleKeyDown(
 
 
 
-  return (
-    <div className="flex flex-1 h-screen bg-[#0A0F1F] bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(56,189,248,0.12),transparent)] overflow-hidden">
-      <div className="flex flex-col w-full h-screen">
-        <div className="relative h-full flex flex-col overflow-hidden scrollbar-thin scrollbar-track-transparent scrollbar-thumb-sky-400/40 hover:scrollbar-thumb-sky-400/60">
+return (
+  <div className="flex flex-1 h-screen bg-[#0A0F1F] bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(56,189,248,0.12),transparent)] overflow-hidden">
 
-  {/* ONLY THIS SCROLLS */}
-      <div className="flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-sky-400/40 hover:scrollbar-thumb-sky-400/60">
+    <div className="flex flex-col w-full h-screen min-h-0">
+
+      {/* ONLY THIS AREA SCROLLS */}
+      <div className="relative flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-sky-400/40 hover:scrollbar-thumb-sky-400/60">
 
         {messages.length === 0 ? (
           <Hero
@@ -1065,27 +1065,31 @@ function handleKeyDown(
 
       </div>
 
-        </div>
+      {/* TEXTAREA + FOOTER — NOT SCROLLABLE */}
       <div className="shrink-0 w-full flex justify-center">
+
         <div className="flex flex-col gap-2 w-full max-w-4xl px-3 sm:px-6 pt-2 pb-2 sm:py-4">
-            <div className="backdrop-blur-xl bg-white/[0.04] border border-sky-500/20 rounded-3xl sm:rounded-4xl px-4 py-3 flex flex-col gap-2 shadow-[0_0_25px_rgba(56,189,248,0.06)] transition-all duration-300 focus-within:border-sky-400/60 focus-within:shadow-[0_0_25px_rgba(56,189,248,0.25)]">
-              <div className="flex flex-wrap items-center gap-2">
 
+          <div className="backdrop-blur-xl bg-white/[0.04] border border-sky-500/20 rounded-3xl sm:rounded-4xl px-4 py-3 flex flex-col gap-2 shadow-[0_0_25px_rgba(56,189,248,0.06)] transition-all duration-300 focus-within:border-sky-400/60 focus-within:shadow-[0_0_25px_rgba(56,189,248,0.25)]">
+
+            <div className="flex flex-wrap items-center gap-2">
+
+              <motion.button
+                whileHover={{ scale: 1.00 }}
+                transition={{
+                  duration: 0.2
+                }}
+                className="font-poppins font-bold px-5 py-2 rounded-full bg-transparent border border-sky-400 text-white text-xs transition-shadow duration-300"
+              >
+                <span className="text-sky-500">Jero</span>
+                <span className="text-gray-400">NXT</span>
+                <span className="text-white">.dev</span>
+              </motion.button>
+
+              {showPersonalButton && (
                 <motion.button
-                  whileHover={{ scale: 1.00 }}
-                  transition={{
-                    duration: 0.2
-                  }}
-                  className="font-poppins font-bold px-5 py-2 rounded-full bg-transparent border border-sky-400 text-white text-xs transition-shadow duration-300">
-                    <span className="text-sky-500">Jero</span>
-                    <span className="text-gray-400">NXT</span>
-                    <span className="text-white">.dev</span>
-                </motion.button>
-
-
-                {showPersonalButton && (
-                  <motion.button initial={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
                   onClick={() => {
 
                     if (isTyping) return;
@@ -1103,14 +1107,12 @@ function handleKeyDown(
                           (msg) => msg.id
                         );
 
-
                     setUsedButtons((prev) => [
                       ...prev,
                       ...assistantIds.filter(
                         (id) => !prev.includes(id)
                       )
                     ]);
-
 
                     addMessage(
                       "user",
@@ -1133,63 +1135,82 @@ function handleKeyDown(
                     }, 2500);
 
                   }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                  className="font-poppins font-semibold px-5 py-2 rounded-full bg-transparent border border-sky-400 text-sky-500 text-xs transition-shadow duration-300"
+                >
+                  Personal Side
+                </motion.button>
+              )}
 
+            </div>
 
-                    whileHover={{scale: 1.05}}
-                    transition={{duration: 0.2}}
+            <div className="relative">
 
+              <AnimatePresence mode="wait">
 
-                    className="font-poppins font-semibold px-5 py-2 rounded-full bg-transparent border border-sky-400  text-sky-500 text-xs transition-shadow duration-300 ">
-                    Personal Side
-                  </motion.button>
+                {showPlaceholder && (
+                  <motion.div
+                    key={placeholder}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -20, opacity: 0 }}
+                    transition={{
+                      duration: 0.4,
+                      ease: "easeOut"
+                    }}
+                    className="absolute left-2 top-3 sm:top-4 text-base text-gray-500 pointer-events-none"
+                  >
+                    {placeholder}
+                  </motion.div>
                 )}
 
-              </div>
-              <div className="relative">
-                <AnimatePresence mode="wait">
-                  {showPlaceholder && (
-                    <motion.div
-                      key={placeholder}
-                      initial={{y: 20, opacity: 0}}
-                      animate={{y: 0,opacity: 1}}
-                      exit={{y: -20,opacity: 0}}
-                      transition={{duration: 0.4,ease: "easeOut"}}
-                      className="absolute left-2 top-3 sm:top-4 text-base text-gray-500 pointer-events-none">
-                      {placeholder}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+              </AnimatePresence>
 
-
-                <textarea ref={textareaRef} value={input}
-                  onChange={handleChange}
-                  onKeyDown={handleKeyDown}
-                  rows={1}
-                  className="w-full text-base px-2 py-3 sm:py-4 outline-none bg-transparent text-white resize-none overflow-hidden max-h-32"/>
-              </div>
-
-
-              <div className="flex items-center justify-end">
-                <button type="button"onClick={handleSubmit}aria-label="Send message"
-                  disabled={!input.trim() || isTyping}
-                  className="flex items-center justify-center rounded-xl text-sky-400 transition-all duration-300 hover:text-sky-300 hover:bg-sky-500/15 hover:shadow-[0_0_14px_rgba(56,189,248,0.4)] disabled:text-gray-600 disabled:hover:bg-transparent disabled:hover:shadow-none">
-                  <ArrowUpCircleIcon className="w-8 h-8" />
-                </button>
-              </div>
-
-
-              <ContactPopup className="translate-x-2 sm:translate-x-4 md:translate-x-6 lg:translate-x-10 xl:translate-x-16 2xl:translate-x-24 -translate-y-4"
-                open={showContactPopup}
-                onClose={() =>
-                  setShowContactPopup(false)
-                }
+              <textarea
+                ref={textareaRef}
+                value={input}
+                onChange={handleChange}
+                onKeyDown={handleKeyDown}
+                rows={1}
+                className="w-full text-base px-2 py-3 sm:py-4 outline-none bg-transparent text-white resize-none overflow-hidden max-h-32"
               />
+
             </div>
-            <Footer />
+
+            <div className="flex items-center justify-end">
+
+              <button
+                type="button"
+                onClick={handleSubmit}
+                aria-label="Send message"
+                disabled={!input.trim() || isTyping}
+                className="flex items-center justify-center rounded-xl text-sky-400 transition-all duration-300 hover:text-sky-300 hover:bg-sky-500/15 hover:shadow-[0_0_14px_rgba(56,189,248,0.4)] disabled:text-gray-600 disabled:hover:bg-transparent disabled:hover:shadow-none"
+              >
+                <ArrowUpCircleIcon className="w-8 h-8" />
+              </button>
+
+            </div>
+
+            <ContactPopup
+              className="translate-x-2 sm:translate-x-4 md:translate-x-6 lg:translate-x-10 xl:translate-x-16 2xl:translate-x-24 -translate-y-4"
+              open={showContactPopup}
+              onClose={() =>
+                setShowContactPopup(false)
+              }
+            />
+
           </div>
+
+          <Footer />
+
         </div>
+
       </div>
+
     </div>
-  );
+
+  </div>
+);
 }
 export default Body;
