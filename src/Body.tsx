@@ -1044,22 +1044,24 @@ function handleKeyDown(
       <div className="flex flex-col w-full h-screen">
         <div className="relative h-full overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-sky-400/40 hover:scrollbar-thumb-sky-400/60">
 
-        <div className="flex-1 min-h-0 flex flex-col overflow-y-auto">
-          {messages.length === 0 ? (
-            <Hero
-              cards={CARDS}
-              onCardClick={handleCardClick}
-            />
-          ) : (
-            <Message
-              messages={messages}
-              isTyping={isTyping}
-              setIsTyping={setIsTyping}
-              onFollowUp={sendMessage}
-              usedButtons={usedButtons}
-              forceScroll={forceScroll}
-            />
-          )}
+        <div className="flex-1 min-h-0 flex flex-col">
+          <div className="flex-1 min-h-0 overflow-y-auto">
+            {messages.length === 0 ? (
+              <Hero
+                cards={CARDS}
+                onCardClick={handleCardClick}
+              />
+            ) : (
+              <Message
+                messages={messages}
+                isTyping={isTyping}
+                setIsTyping={setIsTyping}
+                onFollowUp={sendMessage}
+                usedButtons={usedButtons}
+                forceScroll={forceScroll}
+              />
+            )}
+          </div>
         </div>
 
         </div>
