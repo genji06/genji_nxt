@@ -1042,7 +1042,7 @@ function handleKeyDown(
 return (
   <div className="flex flex-1 h-screen bg-[#0A0F1F] bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(56,189,248,0.12),transparent)] overflow-hidden">
 
-    <div className="flex flex-col w-full h-screen min-h-0">
+    <div className="flex flex-col w-full h-[100dvh] min-h-0 overflow-hidden">
 
       {/* ONLY THIS AREA SCROLLS */}
       <div className="relative flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-sky-400/40 hover:scrollbar-thumb-sky-400/60">
