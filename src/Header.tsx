@@ -247,7 +247,6 @@ What should we explore next?`,
           "jerome",
           "jero",
           "life",
-          "me"
         ],
 
         sticker: Pose,

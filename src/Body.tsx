@@ -296,7 +296,7 @@ What would you like to know?`,
     answer:
       `I'm open to **internships**, collaborations, and opportunities where I can learn, contribute, and build meaningful solutions. For now, I’m still learning and continuously improving my skills as I gain more experience through different projects and experiences.
 
-I’ve been exploring mobile, web, backend, and UI/UX development, and I’m excited to keep **growing** while connecting with people who share the same passion for technology and innovation.
+I’ve been exploring mobile, web, backend, and UI/UX development, and I’m excited to keep **growing** while connecting with people that share the same passion for technology and innovation.
 
 What are you curious about?`,
 
