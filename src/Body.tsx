@@ -1042,31 +1042,32 @@ function handleKeyDown(
   return (
     <div className="flex flex-1 h-screen bg-[#0A0F1F] bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(56,189,248,0.12),transparent)] overflow-hidden">
       <div className="flex flex-col w-full h-screen">
-        <div className="relative h-full overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-sky-400/40 hover:scrollbar-thumb-sky-400/60">
+        <div className="relative h-full flex flex-col overflow-hidden scrollbar-thin scrollbar-track-transparent scrollbar-thumb-sky-400/40 hover:scrollbar-thumb-sky-400/60">
 
-        <div className="flex-1 min-h-0 flex flex-col overflow-hidden">
-          <div className="flex-1 min-h-0 overflow-y-auto">
-                {messages.length === 0 ? (
-                  <Hero
-                    cards={CARDS}
-                    onCardClick={handleCardClick}
-                  />
-                ) : (
-                  <Message
-                    messages={messages}
-                    isTyping={isTyping}
-                    setIsTyping={setIsTyping}
-                    onFollowUp={sendMessage}
-                    usedButtons={usedButtons}
-                    forceScroll={forceScroll}
-                  />
-                )}
-              </div>
-        </div>
+  {/* ONLY THIS SCROLLS */}
+      <div className="flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-sky-400/40 hover:scrollbar-thumb-sky-400/60">
+
+        {messages.length === 0 ? (
+          <Hero
+            cards={CARDS}
+            onCardClick={handleCardClick}
+          />
+        ) : (
+          <Message
+            messages={messages}
+            isTyping={isTyping}
+            setIsTyping={setIsTyping}
+            onFollowUp={sendMessage}
+            usedButtons={usedButtons}
+            forceScroll={forceScroll}
+          />
+        )}
+
+      </div>
 
         </div>
-    <div className="shrink-0 w-full flex justify-center">
-      <div className="flex flex-col gap-2 w-full max-w-4xl px-3 sm:px-6 pt-2 pb-2 sm:py-4">
+      <div className="shrink-0 w-full flex justify-center">
+        <div className="flex flex-col gap-2 w-full max-w-4xl px-3 sm:px-6 pt-2 pb-2 sm:py-4">
             <div className="backdrop-blur-xl bg-white/[0.04] border border-sky-500/20 rounded-3xl sm:rounded-4xl px-4 py-3 flex flex-col gap-2 shadow-[0_0_25px_rgba(56,189,248,0.06)] transition-all duration-300 focus-within:border-sky-400/60 focus-within:shadow-[0_0_25px_rgba(56,189,248,0.25)]">
               <div className="flex flex-wrap items-center gap-2">
 
